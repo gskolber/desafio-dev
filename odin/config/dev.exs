@@ -2,8 +2,8 @@ import Config
 
 # Configure your database
 config :odin, Odin.Repo,
-  username: "postgres",
-  password: "postgres",
+  username: "root",
+  password: "root",
   database: "odin_dev",
   hostname: "localhost",
   show_sensitive_data_on_connection_error: true,
