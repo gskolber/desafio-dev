@@ -7,6 +7,8 @@ defmodule OdinWeb.Router do
 
   scope "/api", OdinWeb do
     pipe_through :api
+
+    post "/upload", UserController, :upload
   end
 
   # Enables LiveDashboard only for development
