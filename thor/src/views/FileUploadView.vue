@@ -19,12 +19,7 @@
 
 <script>
 import axios from 'axios';
-
-axios.defaults.headers.post['Content-Type'] = 'multipart/form-data';
-
 export default {
-
-
     data() {
         return {
             selectedFile: null
@@ -35,10 +30,10 @@ export default {
             console.log(event.target.files[0])
             this.selectedFile = event.target.files[0]
         },
-        onUpload(){
+        onUpload() {
             const formData = new FormData()
             formData.append('document', this.selectedFile)
-            axios.post('http://localhost:4000/api/users', formData, {
+            axios.post('http://localhost:4000/api/upload', formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data'
                 }
