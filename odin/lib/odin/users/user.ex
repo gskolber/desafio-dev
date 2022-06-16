@@ -5,7 +5,7 @@ defmodule Odin.Users.User do
   schema "user" do
     field :email, :string
     field :password_hash, :string
-    field :password, :string, virtual: :true
+    field :password, :string, virtual: true
 
     timestamps()
   end

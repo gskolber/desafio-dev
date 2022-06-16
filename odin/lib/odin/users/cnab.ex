@@ -19,13 +19,12 @@ defmodule Odin.Users.Cnab do
 
   def changeset(params) do
     %__MODULE__{}
-    |>cast(params, @params)
-    |>transform_value()
-
+    |> cast(params, @params)
+    |> transform_value()
   end
 
   def transform_value(changeset) do
     changeset
-    |>change(value: changeset.changes.value/100)
+    |> change(value: changeset.changes.value / 100)
   end
 end

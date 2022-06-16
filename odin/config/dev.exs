@@ -9,10 +9,10 @@ config :odin, Odin.Repo,
   show_sensitive_data_on_connection_error: true,
   pool_size: 10
 
-
 config :odin, Odin.Guardian,
   issuer: "odin",
   secret_key: "S8f2rZUlnHxxksFF+xtKTUKZ+fsrY+Qr1CcGmRThEKfQntPXhy5zVfPEufVZe2G1"
+
 # For development, we disable any cache and enable
 # debugging and code reloading.
 #

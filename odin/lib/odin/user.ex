@@ -1,5 +1,4 @@
 defmodule Odin.User do
-
   alias Odin.Users.User, as: UserSchema
   alias Odin.Repo
   alias Odin.Guardian
@@ -24,9 +23,8 @@ defmodule Odin.User do
 
   def check_pass(user, password) do
     case Bcrypt.check_pass(user, password) do
-      {:error,_} -> {:error, "an error was ocurred"}
+      {:error, _} -> {:error, "an error was ocurred"}
       {:ok, user} -> Guardian.encode_and_sign(user)
     end
   end
-
 end
