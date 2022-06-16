@@ -4,15 +4,17 @@ defmodule Odin.Users.User do
 
   schema "user" do
     field :email, :string
-    field :hash_password, :string
+    field :password_hash, :string
+    field :password, :string, virtual: :true
 
     timestamps()
   end
 
   @doc false
-  def changeset(users, attrs) do
-    users
-    |> cast(attrs, [:email, :hash_password])
-    |> validate_required([:email, :hash_password])
+  def changeset(attrs) do
+    %__MODULE__{}
+    |> cast(attrs, [:email, :password])
+    |> validate_required([:email, :password])
+    |> change(Bcrypt.add_hash(attrs.password))
   end
 end

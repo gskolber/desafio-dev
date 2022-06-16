@@ -4,7 +4,7 @@ defmodule Odin.Repo.Migrations.CreateUser do
   def change do
     create table(:user) do
       add :email, :string
-      add :hash_password, :string
+      add :password_hash, :string
 
       timestamps()
     end
